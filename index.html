@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twich.IT - Modern Messenger for Professionals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            Twich<span class="logo-accent">.IT</span>
+        </div>
+        <div class="burger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav" id="navMenu">
+            <a href="#features" data-i18n="nav-features" onclick="closeMenu()">Features</a>
+            <a href="#tech" data-i18n="nav-tech" onclick="closeMenu()">Technology</a>
+            <a href="#download" data-i18n="nav-download" onclick="closeMenu()">Download</a>
+            <span class="badge">Android</span>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="grid-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-label">
+                    <span>📱</span>
+                    <span data-i18n="hero-label">Powered by Tinode</span>
+                </div>
+                <h1>
+                    <span class="gradient-text" data-i18n="hero-title">Secure messenger</span>
+                </h1>
+                <p data-i18n="hero-description">
+                    Fast, secure, and developer-friendly messaging. Built on Tinode engine with modern Android architecture. 
+                    Real-time communication without compromise.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">
+                        <span>📥</span>
+                        <span data-i18n="btn-download">Download APK</span>
+                    </button>
+                    <button class="btn btn-secondary" data-i18n="btn-github">View on GitHub</button>
+                </div>
+            </div>
+
+            <div class="phone-mockup">
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen" id="phoneScreen">
+                        <div class="chat-header">
+                            <div class="avatar">DM</div>
+                            <div class="chat-info">
+                                <h3 data-chat-i18n="chat-name">Dev Team</h3>
+                                <div class="chat-status" data-chat-i18n="chat-status">● online</div>
+                            </div>
+                            <div class="theme-toggle" onclick="toggleTheme()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="messages" id="chatMessages">
+                            <div class="message message-received" data-chat-i18n="msg-1">
+                                Hey, deployed the new build 🚀
+                            </div>
+                            <div class="message message-sent" data-chat-i18n="msg-2">
+                                Perfect! Testing now
+                            </div>
+                            <div class="message message-received" data-chat-i18n="msg-3">
+                                All endpoints working?
+                            </div>
+                            <div class="message message-sent" data-chat-i18n="msg-4">
+                                Yep, API response time is great
+                            </div>
+                            <div class="message message-received" data-chat-i18n="msg-5">
+                                Nice! What about the new auth flow?
+                            </div>
+                            <div class="message message-sent" data-chat-i18n="msg-6">
+                                Tested it, works smoothly
+                            </div>
+                            <div class="message message-received" data-chat-i18n="msg-7">
+                                Awesome! Ready for production?
+                            </div>
+                            <div class="message message-sent" data-chat-i18n="msg-8">
+                                Yeah, let's deploy 🎉
+                            </div>
+                            <div class="typing-indicator">
+                                <div class="typing-dot"></div>
+                                <div class="typing-dot"></div>
+                                <div class="typing-dot"></div>
+                            </div>
+                            <div style="height: 20px;"></div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" class="chat-input" data-chat-i18n-placeholder="input-placeholder" placeholder="Type a message..." readonly>
+                            <button class="send-button">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title" data-i18n="features-title">Built for Professionals</h2>
+            <p class="section-subtitle" data-i18n="features-subtitle">Everything you need for seamless team communication</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 data-i18n="feature-1-title">Real-time Messaging</h3>
+                    <p data-i18n="feature-1-desc">Instant message delivery powered by Tinode's WebSocket protocol. No delays, just pure speed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 data-i18n="feature-2-title">End-to-End Encryption</h3>
+                    <p data-i18n="feature-2-desc">Your conversations stay private. Military-grade encryption ensures your data is secure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3 data-i18n="feature-3-title">File Sharing</h3>
+                    <p data-i18n="feature-3-desc">Share code snippets, documents, and media files instantly. Supports all common formats.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 data-i18n="feature-4-title">Group Chats</h3>
+                    <p data-i18n="feature-4-desc">Create channels and groups for your teams. Organize discussions by projects or topics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 data-i18n="feature-5-title">Material Design</h3>
+                    <p data-i18n="feature-5-desc">Clean, modern UI following Material Design guidelines. Native Android experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3 data-i18n="feature-6-title">Offline Mode</h3>
+                    <p data-i18n="feature-6-desc">Access your messages offline. Automatic sync when connection is restored.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack" id="tech">
+        <div class="container">
+            <div class="tech-label" data-i18n="tech-label">Technology Stack</div>
+            <div class="tech-grid">
+                <div class="tech-item">Tinode Core</div>
+                <div class="tech-item">Kotlin</div>
+                <div class="tech-item">Android SDK</div>
+                <div class="tech-item">WebSocket</div>
+                <div class="tech-item">Cloudflare</div>
+                <div class="tech-item">Coturn</div>
+                <div class="tech-item">Material Design 3</div>
+                <div class="tech-item">Jetpack Compose</div>
+                <div class="tech-item">Room Database</div>
+                <div class="tech-item">Coroutines</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="download">
+        <div class="cta-content">
+            <h2 data-i18n="cta-title">Ready to get started?</h2>
+            <p data-i18n="cta-description">Download Twich.IT for Android and experience professional messaging designed for IT teams.</p>
+            <a href="#" class="download-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span data-i18n="download-button">Download for Android</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" data-i18n="footer-privacy">Privacy Policy</a>
+                <a href="#" data-i18n="footer-terms">Terms of Service</a>
+                <a href="#" data-i18n="footer-docs">Documentation</a>
+                <a href="#">GitHub</a>
+                <a href="#" data-i18n="footer-support">Support</a>
+            </div>
+            <p data-i18n="footer-copyright">&copy; 2024 Twich.IT Messenger. Built on Tinode engine.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
